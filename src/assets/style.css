@@ -1,0 +1,215 @@
+@import "./reset.css";
+body {
+    font-family: "Montserrat";
+  }
+  .container {
+    padding: 0 auto;
+  }
+  header {
+    background-color: #028090;
+  }
+  .header__navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 25px 30px;
+    margin: 0;
+  }
+  .navbar-link {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .header__navbar-item {
+    list-style-type: none;
+  }
+  .navbar-link:hover{
+    color: gray;
+  }
+  /* main styles */
+  .main__page {
+      background-image: url("https://static.vecteezy.com/system/resources/previews/035/034/237/non_2x/ai-generated-herbs-spices-and-ingredients-for-cooking-on-white-background-free-photo.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .main__title {
+    font-size: 46px;
+      font-weight: 600;
+      margin-bottom: 24px;
+  }
+  .main__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+  
+  }
+  .main__button{
+      background-color:#211A1D;
+      padding: 12px 24px;
+  }
+  .main__button-link{
+      text-decoration: none;
+      color:white;
+  }
+  
+  /* recepies styles */
+  .recipes-grid{
+      padding-top: 50px;
+      align-items:center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap:40px;
+      justify-self: center;
+  }
+  .recepies-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .card-title{
+    font-weight: 600;
+    font-size: 24px;
+
+  }
+  .list-group {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  /* recepie style */
+  .recepie-container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+  
+  }
+  .recepie__image{
+    margin-top: 60px;
+    width: 600px;
+    height: 400px;
+  }
+  .recepie__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .recepie__name{
+    font-weight: 700;
+    font-size: 48px;
+    margin-right: 24px;
+   
+  }
+  .recepie__time{
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .recepie__title{
+    margin-top: 24px;
+    display: flex;
+    align-items:center;
+  }
+  .recepie__time{
+    margin-right: 12px;
+  }
+  .recepie__ingredient-title, .recepie__steps-title{
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .recepie__ingredients{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .recepie__steps{
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 32px;
+   text-align: left;
+  }
+  .recepie__ingredient, .recepie__step{
+    margin-top: 12px;
+  }
+  .recepie__instruction{
+    margin-top: 12px;
+    max-width: 900px;
+
+  }
+  .recipe__instruction-index{
+    font-weight: 600;
+  }
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-width: 3px;
+    border-style: dashed solid  solid dotted;
+    border-color: #FF3D00 #FF3D00 transparent #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 20px;
+    top: 31px;
+    border: 10px solid transparent;
+    border-right-color: #FF3D00;
+    transform: rotate(-40deg);
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  
+  
+  .error-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .error{
+    font-size: 28px;
+    font-weight: 600;
+    color: black
+  }
+  .nf-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  
+  }
+  .nf-title{
+    font-weight: 600;
+    font-size: 40px;
+  }
+  .loader-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
