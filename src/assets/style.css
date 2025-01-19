@@ -118,6 +118,7 @@ body {
     margin-top: 24px;
     display: flex;
     align-items:center;
+    align-selfg: center;
   }
   .recepie__time{
     margin-right: 12px;
