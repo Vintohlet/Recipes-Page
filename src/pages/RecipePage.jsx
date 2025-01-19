@@ -4,6 +4,7 @@ import { API_KEY } from "../utils/consts.js";
 import Loader from "../components/shared/Loader";
 import RecipeInfo from "../components/RecipeInfo.jsx";
 import Error from "../components/shared/Error";
+import { axiosInstance } from "../services/axios.js";
 export default function RecipePage() {
   const { id } = useParams();
   console.log(id)
@@ -14,16 +15,8 @@ export default function RecipePage() {
     async function getRecipeInfo() {
       try {
         setLoading(true);
-        const response = await fetch(
-          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${API_KEY}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        const data = await response.json();
+        const response = await axiosInstance.get(`/recipes/${id}/information?includeNutrition=false&apiKey=${API_KEY}`);
+        const data = response.data;
         setRecipeInfo(data);
         console.log(data);
       } catch (error) {

@@ -3,6 +3,7 @@ import RecipieCard from "../components/RecipieCard"
 import { API_KEY } from "../utils/consts";
 import Loader from "../components/shared/Loader";
 import Error from "../components/shared/Error";
+import { axiosInstance } from "../services/axios";
 
 export default function RecipiesCardPage() {
   const [recipesList, setRecipes] = useState([]);
@@ -13,17 +14,9 @@ export default function RecipiesCardPage() {
     async function getRecipes() {
       try {
         setLoading(true);
-        const response = await fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        const data = await response.json();
-        console.log(data);
+        const response = await axiosInstance.get(`/recipes/complexSearch?apiKey=${API_KEY}`);
+        const data = response.data;
+        console.log(data.results);
         setRecipes(data.results);
       } catch (error) {
         setError(true);
