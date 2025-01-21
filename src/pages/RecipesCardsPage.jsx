@@ -14,10 +14,10 @@ export default function RecipiesCardPage() {
     async function getRecipes() {
       try {
         setLoading(true);
-        const response = await axiosInstance.get(`/recipes/complexSearch?apiKey=${API_KEY}`);
+        const response = await axiosInstance.get(`/recipes/random?number=12&apiKey=${API_KEY}`);
         const data = response.data;
-        console.log(data.results);
-        setRecipes(data.results);
+      
+        setRecipes(data.recipes);
       } catch (error) {
         setError(true);
         console.error(error);

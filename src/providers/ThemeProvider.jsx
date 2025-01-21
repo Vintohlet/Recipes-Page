@@ -6,10 +6,15 @@ export function useTheme(){
 }
 
 export default function ThemeProvider(props) {
-  const [isLightTheme, setIsLightTheme] = useState(false);
+  const [isLightTheme, setIsLightTheme] = useState(() =>{
+    const storedTheme = localStorage.getItem("isLight");
+  
+    return storedTheme === "true" ? true : false;
+  });
 
   function toggleTheme() {
     setIsLightTheme(!isLightTheme);
+    localStorage.setItem("isLight", !isLightTheme);
   }
 
   return (
