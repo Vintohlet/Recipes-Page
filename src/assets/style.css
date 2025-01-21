@@ -1,4 +1,6 @@
-@import "./reset.css";
+@import "./libs/reset.css";
+@import "./settings.css";
+@import "./libs/variables.css";
 body {
     font-family: "Montserrat";
   }
@@ -6,7 +8,7 @@ body {
     padding: 0 auto;
   }
   header {
-    background-color: #028090;
+    background-color: var(--header-color);
   }
   .header__navbar-nav {
     display: flex;
@@ -18,7 +20,7 @@ body {
   }
   .navbar-link {
     text-decoration: none;
-    color: white;
+    color: var(--header-text);
     font-size: 24px;
     font-weight: 600;
   }
@@ -26,11 +28,11 @@ body {
     list-style-type: none;
   }
   .navbar-link:hover{
-    color: gray;
+    color: var(--gray)
   }
   /* main styles */
   .main__page {
-      background-image: url("https://static.vecteezy.com/system/resources/previews/035/034/237/non_2x/ai-generated-herbs-spices-and-ingredients-for-cooking-on-white-background-free-photo.jpg");
+      background-image: url("https://static.vecteezy.com/system/resources/previews/035/034/237/non_2x/ai-generated-herbs-spices-and-ingredients-for-cooking-on-bg-background-free-photo.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +42,7 @@ body {
     height: 100vh;
   }
   .main__title {
+    color: var(--text);
     font-size: 46px;
       font-weight: 600;
       margin-bottom: 24px;
@@ -53,16 +56,17 @@ body {
   
   }
   .main__button{
-      background-color:#211A1D;
+      background-color:var(--text);
       padding: 12px 24px;
   }
   .main__button-link{
       text-decoration: none;
-      color:white;
+      color:var(--bg);
   }
   
   /* recepies styles */
   .recipes-grid{
+    background-color: var(--bg);
       padding-top: 50px;
       align-items:center;
       display: grid;
@@ -70,15 +74,27 @@ body {
       grid-gap:40px;
       justify-self: center;
   }
+  .btn{
+    background-color: var(--button);
+    color: white
+  }
+  .btn:hover{
+    color: var(--text);
+    background-color:var(--button-hover)
+  }
   .recepies-container{
     display: flex;
     justify-content: center;
     align-items:center;
   }
   .card-title{
+    color: var(--text);
     font-weight: 600;
     font-size: 24px;
 
+  }
+  .card{
+    background-color: var(--card)
   }
   .list-group {
     margin-top: 18px;
@@ -98,6 +114,7 @@ body {
     height: 400px;
   }
   .recepie__text{
+    color:var(--text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,12 +122,14 @@ body {
   }
   
   .recepie__name{
+    color:var(--text);
     font-weight: 700;
     font-size: 48px;
     margin-right: 24px;
    
   }
   .recepie__time{
+    color:var(--text);
     font-weight: 500;
     font-size: 16px;
   }
@@ -118,23 +137,26 @@ body {
     margin-top: 24px;
     display: flex;
     align-items:center;
-    align-selfg: center;
+    align-self: center;
   }
   .recepie__time{
     margin-right: 12px;
   }
   .recepie__ingredient-title, .recepie__steps-title{
+    color:var(--text);
     font-size: 32px;
     font-weight: 600;
     margin-top: 32px;
     margin-bottom: 16px;
   }
   .recepie__ingredients{
+    color:var(--text);
     display: flex;
     flex-direction: column;
     text-align: center;
   }
   .recepie__steps{
+    color:var(--text);
    display: flex;
    flex-direction: column;
    margin-bottom: 32px;
@@ -149,6 +171,7 @@ body {
 
   }
   .recipe__instruction-index{
+    color:var(--text);
     font-weight: 600;
   }
   .loader {
@@ -212,5 +235,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
   }
+  .dark{
+    background-color:rgb(36, 36, 36);
+    --card: rgb(61, 61, 61);
+    --text: white;
+    --bg: rgb(36, 36, 36);
+    --button: gray;
+    --button-hover:rgb(46, 46, 46);
+    --header-color: rgb(0, 0, 0);
+  }
+ .search-icon{
+  margin-left: 12px;
+  width: 24px;
+  height: 24px;
+ }

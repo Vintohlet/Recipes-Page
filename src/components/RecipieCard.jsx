@@ -12,7 +12,7 @@ export default function RecipieCard({name, image, id}){
           />
           <div className="card-body">
             <h5 className="card-title">{name}</h5>            
-            <Link to={RECIPE_INFO_PAGE.replace(":id", id)} className="btn btn-primary">
+            <Link to={RECIPE_INFO_PAGE.replace(":id", id)} className="btn ">
               How to Cook
             </Link>
           </div>

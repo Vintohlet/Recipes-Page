@@ -1,0 +1,39 @@
+.theme {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .theme-text {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 88px;
+    height: 44px;
+    border: 1px solid white;
+    border-radius: 24px;
+  }
+  
+  .toggle__active > .toggle-round {
+    left: 46px;
+    background:  var(--bg);
+  }
+  
+  .toggle-round {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
