@@ -286,3 +286,6 @@ body {
   margin: 0 auto;
   height: 100%;
  }
+ .favorites__message{
+  height: 100vh;
+ }
