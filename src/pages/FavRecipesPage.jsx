@@ -31,7 +31,9 @@ export default function FavRecipesPage() {
             />
           ))
         ) : (
+            <div className="favorites__message">
           <h2 className="favorites__text">You don't have any favorites yet :(</h2>
+            </div>
         )}
       </div>
     </div>
