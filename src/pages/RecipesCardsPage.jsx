@@ -1,33 +1,13 @@
-import { useEffect, useState } from "react";
+
 import RecipieCard from "../components/RecipieCard"
-import { API_KEY } from "../utils/consts";
 import Loader from "../components/shared/Loader";
 import Error from "../components/shared/Error";
-import { axiosInstance } from "../services/axios";
+import { useRecipes } from "../hooks/useRecipes";
+
 
 export default function RecipiesCardPage() {
-  const [recipesList, setRecipes] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [isError, setError] = useState(false);
+  const {recipesList, isLoading, isError} = useRecipes();
 
-  useEffect(() => {
-    async function getRecipes() {
-      try {
-        setLoading(true);
-        const response = await axiosInstance.get(`/recipes/random?number=12&apiKey=${API_KEY}`);
-        const data = response.data;
-      
-        setRecipes(data.recipes);
-      } catch (error) {
-        setError(true);
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    getRecipes();
-  }, []);
-  console.log(recipesList)
   return isLoading ? (
     <Loader />
   ) : isError ? (

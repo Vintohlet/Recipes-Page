@@ -93,8 +93,18 @@ body {
     font-size: 24px;
 
   }
+  .btn{
+    margin-bottom: 5px;
+  }
   .card{
     background-color: var(--card)
+  }
+  .card-body{
+    height: 400px;
+  }
+  .card__buttons{
+    display: flex;
+    flex-direction: column;
   }
   .list-group {
     margin-top: 18px;
@@ -106,6 +116,7 @@ body {
     flex-direction: column;
     align-items:center;
     justify-content: center;
+    padding-bottom: 24px;
   
   }
   .recepie__image{
@@ -114,6 +125,7 @@ body {
     height: 400px;
   }
   .recepie__text{
+    margin-bottom: 24px;
     color:var(--text);
     display: flex;
     flex-direction: column;
@@ -208,6 +220,7 @@ body {
   
   
   .error-container{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -215,7 +228,7 @@ body {
   .error{
     font-size: 28px;
     font-weight: 600;
-    color: black
+    color: var(--text)
   }
   .nf-container{
     width: 100%;
@@ -226,6 +239,7 @@ body {
   
   }
   .nf-title{
+    color: var(--text);
     font-weight: 600;
     font-size: 40px;
   }
@@ -252,5 +266,23 @@ body {
   height: 24px;
  }
  .app{
+  height: 100%;
+ }
+ /* favorites style */
+ .favorites__title{
+  color: var(--text);
+  font-size: 48px;
+  font-weight: 600;
+ }
+ .favorites__text{
+  color: var(--text);
+  padding-top: 60px;
+  padding-bottom: 24px;
+ }
+ .favorites__container{
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  margin: 0 auto;
   height: 100%;
  }

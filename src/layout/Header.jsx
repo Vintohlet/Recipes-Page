@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import {
   HOME_PAGE,
   RECIPES_PAGE,
-  NOT_FOUND_PAGE,
-  RECIPE_INFO_PAGE,
+  FAVORITES_PAGE,
   SEARCH_PAGE,
 } from "../utils/consts";
 import { useState } from "react";
@@ -15,14 +14,14 @@ import { FiSearch } from "react-icons/fi";
 
 export default function Header() {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
-  const [ searchInput, setSearchInput ] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
-    if(searchInput){
-      navigate(SEARCH_PAGE+"?query="+ searchInput)
-      setSearchInput("")
+    if (searchInput) {
+      navigate(SEARCH_PAGE + "?query=" + searchInput);
+      setSearchInput("");
     }
   }
 
@@ -51,6 +50,11 @@ export default function Header() {
             <li className="header__navbar-item">
               <Link to={RECIPES_PAGE} href="" className="navbar-link">
                 Recipes
+              </Link>
+            </li>
+            <li className="header__navbar-item">
+              <Link to={FAVORITES_PAGE} href="" className="navbar-link">
+                Favorites
               </Link>
             </li>
             <form onSubmit={handleSubmit} className="search">

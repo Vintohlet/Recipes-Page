@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { createContext } from "react";
 import AppRouter from "./core/AppRouter";
 import Layout from "./core/Layout";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 export const ThemeContext = createContext();
 function App() {
   const location = useLocation();
@@ -13,9 +15,11 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <Layout>
+    <Provider store={store}>
+      <Layout>
       <AppRouter />
     </Layout>
+    </Provider>
   );
 }
 
